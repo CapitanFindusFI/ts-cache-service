@@ -1,4 +1,4 @@
-import axios, { AxiosInstance, AxiosPromise, AxiosRequestConfig, AxiosResponse } from "axios";
+import { AxiosInstance, AxiosPromise, AxiosRequestConfig, AxiosResponse } from "axios";
 import CacheService from "../../src";
 import CacheType from "../../src/types";
 
@@ -6,13 +6,16 @@ class AxiosExample {
   private instance: AxiosInstance;
   private cacheService: CacheService;
 
-  constructor(config?: AxiosRequestConfig) {
+  constructor(instance: AxiosInstance) {
     this.cacheService = new CacheService(CacheType.MEMORY);
 
-    this.instance = axios.create(config);
-
+    this.instance = instance;
     this.instance.defaults.adapter = this.requestAdapter.bind(this);
     this.instance.interceptors.response.use(this.onResponse.bind(this));
+  }
+
+  public get<T>(url: string, config: AxiosRequestConfig): Promise<AxiosResponse<T>> {
+    return this.instance.get(url, config);
   }
 
   private requestAdapter(config: AxiosRequestConfig): AxiosPromise {
@@ -43,5 +46,4 @@ class AxiosExample {
       }
     });
   }
-
 }

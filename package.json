@@ -9,7 +9,6 @@
     "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
-    "prepare": "npm run build",
     "prepublishOnly": "npm test && npm run lint",
     "preversion": "npm run lint",
     "version": "npm run format && git add -A src",
@@ -35,11 +34,12 @@
   "homepage": "https://github.com/CapitanFindusFI/ts-cache-service#readme",
   "devDependencies": {
     "@types/jest": "^25.1.2",
+    "axios": "^0.19.2",
+    "jest": "^25.1.0",
     "prettier": "^1.19.1",
+    "ts-jest": "^24.3.0",
     "tslint": "^5.20.1",
     "tslint-config-prettier": "^1.18.0",
-    "typescript": "^3.7.5",
-    "ts-jest": "^24.3.0",
-    "jest": "^25.1.0"
+    "typescript": "^3.7.5"
   }
 }

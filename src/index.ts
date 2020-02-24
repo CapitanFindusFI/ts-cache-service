@@ -13,7 +13,23 @@ interface ICacheableRequest {
 class CacheService {
 
   private static generateKey(request: ICacheableRequest): string {
-    return "";
+    let cacheKey = "";
+
+    if (request.headers) {
+      cacheKey += JSON.stringify(request.headers);
+    }
+
+    if (request.params) {
+      cacheKey += JSON.stringify(request.params);
+    }
+
+    if (request.body) {
+      cacheKey += JSON.stringify(request.body);
+    }
+
+    cacheKey = btoa(cacheKey);
+
+    return cacheKey;
   }
 
   private static hasSessionStorage(): boolean {

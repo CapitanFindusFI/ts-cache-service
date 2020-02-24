@@ -24,10 +24,26 @@
     "typescript",
     "cache"
   ],
+  "files": [
+    "lib/**/*"
+  ],
   "author": "Andrea Martini <am95.dev@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/CapitanFindusFI/ts-cached-api-client/issues"
   },
-  "homepage": "https://github.com/CapitanFindusFI/ts-cached-api-client#readme"
+  "homepage": "https://github.com/CapitanFindusFI/ts-cached-api-client#readme",
+  "dependencies": {
+    "axios": "^0.19.2"
+  },
+  "devDependencies": {
+    "@types/jest": "^25.1.2",
+    "@types/axios": "^0.14.0",
+    "prettier": "^1.19.1",
+    "tslint": "^5.20.1",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.7.5",
+    "ts-jest": "^24.3.0",
+    "jest": "^25.1.0"
+  }
 }

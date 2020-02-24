@@ -1,14 +1,9 @@
 import { MemoryCacheHandler } from "./handlers/MemoryCacheHandler";
 import { PersistentCacheHandler } from "./handlers/PersistentCacheHandler";
 import { SessionCacheHandler } from "./handlers/SessionCacheHandler";
+import { ICacheableRequest } from "./interfaces/ICacheableRequest";
 import { ICacheHandler } from "./interfaces/ICacheHandler";
 import CacheType from "./types";
-
-interface ICacheableRequest {
-  headers?: { [key: string]: string }
-  params?: { [key: string]: string }
-  body?: any
-}
 
 class CacheService {
 
@@ -41,7 +36,7 @@ class CacheService {
   }
 
   private keyGeneration: (request: ICacheableRequest) => string;
-  private cacheHandler: ICacheHandler;
+  private readonly cacheHandler: ICacheHandler;
 
   constructor(cacheType: CacheType) {
     this.keyGeneration = CacheService.generateKey;
@@ -68,21 +63,22 @@ class CacheService {
     }
   }
 
-  public store(key: string, value: any): void {
-    this.cacheHandler.store(key, value);
+  public getHandler(): ICacheHandler {
+    return this.cacheHandler;
   }
 
-  public get(key: string): any {
-    return this.cacheHandler.get(key);
+  public store(request: ICacheableRequest, response: any): void {
+    const cacheKey = this.keyGeneration(request);
+    this.cacheHandler.store(cacheKey, response);
+  }
+
+  public get(request: ICacheableRequest): any {
+    const cacheKey = this.keyGeneration(request);
+    return this.cacheHandler.get(cacheKey);
   }
 
   public has(key: string): boolean {
     return this.cacheHandler.has(key);
-  }
-
-  public storeResponse(request: ICacheableRequest, response: any): void {
-    const cacheKey = this.keyGeneration(request);
-    this.store(cacheKey, response);
   }
 
 }

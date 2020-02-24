@@ -1,7 +1,7 @@
 {
-  "name": "ts-cached-api-client",
+  "name": "ts-cache-service",
   "version": "1.0.0",
-  "description": "axios wrapper with ability to cache responses on different application layers",
+  "description": "simple utility to cache API requests in different methods",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "scripts": {
@@ -17,12 +17,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CapitanFindusFI/ts-cached-api-client.git"
+    "url": "git+https://github.com/CapitanFindusFI/ts-cache-service.git"
   },
   "keywords": [
-    "axios",
     "typescript",
-    "cache"
+    "cache",
+    "session-storage"
   ],
   "files": [
     "lib/**/*"
@@ -30,15 +30,11 @@
   "author": "Andrea Martini <am95.dev@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/CapitanFindusFI/ts-cached-api-client/issues"
+    "url": "https://github.com/CapitanFindusFI/ts-cache-service/issues"
   },
-  "homepage": "https://github.com/CapitanFindusFI/ts-cached-api-client#readme",
-  "dependencies": {
-    "axios": "^0.19.2"
-  },
+  "homepage": "https://github.com/CapitanFindusFI/ts-cache-service#readme",
   "devDependencies": {
     "@types/jest": "^25.1.2",
-    "@types/axios": "^0.14.0",
     "prettier": "^1.19.1",
     "tslint": "^5.20.1",
     "tslint-config-prettier": "^1.18.0",

@@ -5,5 +5,8 @@
   ],
   "variable-name": [
     "allow-leading-underscore"
-  ]
+  ],
+  "rules": {
+    "no-console": false
+  }
 }

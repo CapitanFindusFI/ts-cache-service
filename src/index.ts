@@ -10,6 +10,8 @@ class CacheService {
   private static generateKey(request: ICacheableRequest): string {
     let cacheKey = "";
 
+    cacheKey += JSON.stringify({ url: request.url });
+
     if (request.headers) {
       cacheKey += JSON.stringify(request.headers);
     }

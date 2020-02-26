@@ -1,6 +1,6 @@
 {
   "name": "ts-cache-service",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "simple utility to cache API requests in different methods",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",

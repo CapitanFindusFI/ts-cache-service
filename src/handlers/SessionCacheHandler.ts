@@ -1,4 +1,4 @@
-import { ICacheHandler } from "../interfaces/ICacheHandler";
+import { ICacheHandler } from '../interfaces/ICacheHandler';
 
 export class SessionCacheHandler implements ICacheHandler {
   constructor() {
@@ -16,5 +16,4 @@ export class SessionCacheHandler implements ICacheHandler {
   public store(key: string, value: any): void {
     sessionStorage.setItem(key, value);
   }
-
 }

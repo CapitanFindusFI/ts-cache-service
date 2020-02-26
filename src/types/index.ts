@@ -1,7 +1,7 @@
 enum CacheType {
-    MEMORY = "memory",
-    SESSION = "session",
-    PERSISTENT = "persistent",
+  MEMORY = 'memory',
+  SESSION = 'session',
+  PERSISTENT = 'persistent',
 }
 
 export default CacheType;

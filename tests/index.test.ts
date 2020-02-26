@@ -9,7 +9,8 @@ const testRequest: ICacheableRequest = {
   },
   params: {
     foo: "bar"
-  }
+  },
+  url: "https://www.example.com"
 };
 
 const testResponse = {

@@ -1,7 +1,6 @@
-import { ICacheHandler } from "../interfaces/ICacheHandler";
+import { ICacheHandler } from '../interfaces/ICacheHandler';
 
 export class MemoryCacheHandler implements ICacheHandler {
-
   private readonly storage: { [key: string]: any };
 
   constructor() {
@@ -19,5 +18,4 @@ export class MemoryCacheHandler implements ICacheHandler {
   public store(key: string, value: any): void {
     this.storage[key] = value;
   }
-
 }

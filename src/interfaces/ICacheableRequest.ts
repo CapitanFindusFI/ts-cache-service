@@ -1,6 +1,6 @@
 export interface ICacheableRequest {
-  headers?: { [key: string]: string }
-  params?: { [key: string]: string }
-  body?: any
-  url: string
+  headers?: { [key: string]: string };
+  params?: { [key: string]: string };
+  body?: any;
+  url: string;
 }

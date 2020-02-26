@@ -1,7 +1,6 @@
-import { ICacheHandler } from "../interfaces/ICacheHandler";
+import { ICacheHandler } from '../interfaces/ICacheHandler';
 
 export class PersistentCacheHandler implements ICacheHandler {
-
   constructor() {
     // nothing to do here
   }
@@ -17,5 +16,4 @@ export class PersistentCacheHandler implements ICacheHandler {
   public store(key: string, value: any): void {
     localStorage.setItem(key, value);
   }
-
 }

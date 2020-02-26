@@ -1,14 +1,13 @@
-import { MemoryCacheHandler } from "./handlers/MemoryCacheHandler";
-import { PersistentCacheHandler } from "./handlers/PersistentCacheHandler";
-import { SessionCacheHandler } from "./handlers/SessionCacheHandler";
-import { ICacheableRequest } from "./interfaces/ICacheableRequest";
-import { ICacheHandler } from "./interfaces/ICacheHandler";
-import CacheType from "./types";
+import { MemoryCacheHandler } from './handlers/MemoryCacheHandler';
+import { PersistentCacheHandler } from './handlers/PersistentCacheHandler';
+import { SessionCacheHandler } from './handlers/SessionCacheHandler';
+import { ICacheableRequest } from './interfaces/ICacheableRequest';
+import { ICacheHandler } from './interfaces/ICacheHandler';
+import CacheType from './types';
 
 class CacheService {
-
   private static generateKey(request: ICacheableRequest): string {
-    let cacheKey = "";
+    let cacheKey = '';
 
     cacheKey += JSON.stringify({ url: request.url });
 
@@ -30,11 +29,11 @@ class CacheService {
   }
 
   private static hasSessionStorage(): boolean {
-    return (window && window.sessionStorage !== undefined);
+    return window && window.sessionStorage !== undefined;
   }
 
   private static hasLocalStorage(): boolean {
-    return (window && window.localStorage !== undefined);
+    return window && window.localStorage !== undefined;
   }
 
   private keyGeneration: (request: ICacheableRequest) => string;
@@ -82,7 +81,6 @@ class CacheService {
   public has(key: string): boolean {
     return this.cacheHandler.has(key);
   }
-
 }
 
 export default CacheService;

@@ -1,4 +1,4 @@
-#TS Cache Service
+# TS Cache Service
 
 This is a simple utilty lib which helps "caching" things based on a Map of key/value objects,
 which can be stored in different ways.
@@ -14,7 +14,7 @@ Passing a `CacheType` to its constructor, will auto create a `cacheHandler` inst
 
 Currently, there are 3 types of caching system:
 
-#####`CacheType.MEMORY`
+##### `CacheType.MEMORY`
 
 using `handlers/MemoryCacheHandler.ts` class, will store key/values in a simple object
 

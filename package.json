@@ -2,8 +2,8 @@
   "name": "ts-cache-service",
   "version": "1.0.2",
   "description": "simple utility to cache API requests in different methods",
-  "main": "./lib/index.js",
-  "types": "./lib/index.d.ts",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "test": "jest --config jestconfig.json",
     "build": "tsc",

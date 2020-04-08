@@ -1,21 +1,21 @@
-import { ICacheHandler } from '../interfaces/ICacheHandler';
+import { ICacheHandler } from "../interfaces/ICacheHandler";
 
 export class MemoryCacheHandler implements ICacheHandler {
-  private readonly storage: { [key: string]: any };
+  private readonly storage: Map<string, any>;
 
   constructor() {
-    this.storage = {};
+    this.storage = new Map<string, any>();
   }
 
   public get(key: string): any {
-    return this.storage[key];
+    return this.storage.get(key);
   }
 
   public has(key: string): boolean {
-    return this.storage.hasOwnProperty(key);
+    return this.storage.has(key);
   }
 
   public store(key: string, value: any): void {
-    this.storage[key] = value;
+    this.storage.set(key, value);
   }
 }

@@ -7,7 +7,7 @@ It can be useful to store for example huge API responses, which are being almost
 
 ### The Cache Service class
 
-CacheService class, found in `src/index.ts` is a simple class with a `KeyGeneration` property (which is a function)
+CacheService class, found in `src/CacheService.ts` is a simple class with a `KeyGeneration` property (which is a function)
 and a `cacheHandler` property, which is a `ICacheHandler` interface
 
 Passing a `CacheType` to its constructor, will auto create a `cacheHandler` instance with a factory

@@ -1,5 +1,5 @@
 import { AxiosInstance, AxiosPromise, AxiosRequestConfig, AxiosResponse } from "axios";
-import CacheService from "../../src";
+import CacheService from "../../src/CacheService";
 import CacheType from "../../src/types";
 
 class AxiosExample {

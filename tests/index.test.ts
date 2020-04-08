@@ -1,4 +1,4 @@
-import CacheService from "../src";
+import CacheService from "../src/CacheService";
 import { ICacheableRequest } from "../src/interfaces/ICacheableRequest";
 import CacheType from "../src/types";
 

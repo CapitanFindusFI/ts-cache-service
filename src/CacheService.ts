@@ -1,3 +1,4 @@
+import { AxiosRequestConfig } from "axios";
 import CacheType from "./enums/CacheType";
 import { MemoryCacheHandler } from "./handlers/MemoryCacheHandler";
 import { PersistentCacheHandler } from "./handlers/PersistentCacheHandler";
@@ -6,7 +7,7 @@ import { ICacheableRequest } from "./interfaces/ICacheableRequest";
 import { ICacheHandler } from "./interfaces/ICacheHandler";
 
 class CacheService {
-  private static generateKey(request: ICacheableRequest): string {
+  private static generateKey(request: AxiosRequestConfig): string {
     let cacheKey = "";
 
     cacheKey += JSON.stringify({ url: request.url });
@@ -19,8 +20,8 @@ class CacheService {
       cacheKey += JSON.stringify(request.params);
     }
 
-    if (request.body) {
-      cacheKey += JSON.stringify(request.body);
+    if (request.data) {
+      cacheKey += JSON.stringify(request.data);
     }
 
     cacheKey = btoa(cacheKey);
@@ -36,7 +37,7 @@ class CacheService {
     return window && window.localStorage !== undefined;
   }
 
-  private keyGeneration: (request: ICacheableRequest) => string;
+  private keyGeneration: (request: AxiosRequestConfig) => string;
   private readonly cacheHandler: ICacheHandler;
 
   constructor(cacheType: CacheType) {
@@ -73,7 +74,7 @@ class CacheService {
     this.cacheHandler.store(cacheKey, response);
   }
 
-  public get(request: ICacheableRequest): any {
+  public get(request: AxiosRequestConfig): any {
     const cacheKey = this.keyGeneration(request);
     return this.cacheHandler.get(cacheKey);
   }

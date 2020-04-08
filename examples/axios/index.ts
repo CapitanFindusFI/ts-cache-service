@@ -1,6 +1,6 @@
 import { AxiosInstance, AxiosPromise, AxiosRequestConfig, AxiosResponse } from "axios";
 import CacheService from "../../src/CacheService";
-import CacheType from "../../src/types";
+import CacheType from "../../src/enums/CacheType";
 
 class AxiosExample {
   private instance: AxiosInstance;
